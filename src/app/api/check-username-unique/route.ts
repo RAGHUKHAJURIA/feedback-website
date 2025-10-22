@@ -24,7 +24,7 @@ export async function GET(request: Request) {
         const userNameErrors = z.flattenError(result.error).fieldErrors.username || [];
         return Response.json({
             success : false,
-            message: 'Invalid query parameters'
+            message: 'Username must be atleast 2 character'
         }, {status: 400})
     }
 
